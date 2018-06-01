@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+@font-face {
+font-family: mifuente;
+
+src: url(../fuentes/fuentenormal.ttf);
+
+
+}
+
+@font-face {
+font-family: mifuente;
+
+src: url(../fuentes/fuentea.ttf);
+
+font-weight:700;
+
+
+}
+
+@font-face {
+font-family: mifuente;
+
+src: url(../fuentes/fuenteb.ttf);
+
+font-weight: 900;
+
+
+}
+
+@font-face {
+font-family: mifuente;
+
+src: url(../fuentes/fuentec.ttf);
+
+font-style: italic;
+
+
+}
+
+
+#parrafo {font-family: 'Amatic SC', cursive;} /*se utiliza una sola vez por html */
+.estilo  {font-family: 'Kaushan Script', cursive;} /*la clase se puede utilizar varias veces en el mismo html */
+
+#enunciado { font-family: Arial; font-variant: small-caps;}
+
+body { font-family: mifuente, Lucida, monospace; font-size: 10px;}
+
+/*body { font: 10px mifuente, Lucida, monospace;}*/
+
+h1 { font-size: 30px; font-weight: 900}
+
+/*h1 { font: 900 30px mifuente, Lucida, mosnospace;}
+
+
+
+ font-family
+   font-size
+   font-weight
+   font-style
+   font-variant 
+
+ Shorthand 
+   font: weight style variant size family ;
+   */
+
+
+   header { width:100%; height: 200px; background: #f00;}
+
+   #otro { width: 900px; height: 400px; background-image: url(http://www.intrawallpaper.com/static/cache/b9/5d/b95dbd721ffa70b3534a891f91c228b9.jpg); background-repeat: no-repeat; background-size: contain;}
+
+   /*background-size: 
+   x y 
+   x
+   cover > cubre la superficie no importando si se deforma la imagen
+   contain > contener la imagen, no importando si queda alguna parte del elemento si cubrir */

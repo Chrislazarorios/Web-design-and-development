@@ -1,0 +1,162 @@
+-webkit- ---> chrome
+-moz- --> firefox
+-o- --> opera
+
+
+Siempre lo mas especifico sobreescribe lo mas generico
+
+a {} ---> aquellas propiedades que son extensivas a todos los estadios del vinculo
+
+Pseudo Clases
+sintaxis:
+
+
+:pseudo-clase {propiedad:valor;}
+:link {  }---> hace referencia a los vinculos no visitados
+
+:visited { }---> hace referencia a los vinculos visitados
+
+:hover {} ---> hace referencia a los vinculos cuando les pasas el mouse por arriba
+
+:active {} ---> hace referencia a cuando le hacemos click al vinculo, en un tab el active es cuando ese tab esta activo.
+
+Generar selectores compuestos:
+
+selector:pseudo-clase {propiedad:valor;}
+
+
+Tips: 
+
+:link
+:visited
+
+Se usan solamente para vinculos
+
+:hover
+:active
+:focus {}
+
+Se pueden usar en otros elementos
+
+
+
+
+Transformaciones
+
+transform: tipodetransformacion(valor)
+
+Rotacion (2d)
+
+transform: rotate(grados)
+
+
+0deg (vp)
+360deg
+Se puede trabajar con valores negativos(en sentido contrario a las agüjas del reloj)
+
+
+Rotacion (3d)
+
+transform: rotateX()
+transform: rotateY()
+transform: rotateZ()
+
+
+
+Se puede ir como valor de 0deg a 180deg, tambien se puede trabajar con valores negativos
+
+
+------------------------------
+
+Transition
+
+:hover
+:focus
+
+Disparan la transicion
+
+
+
+transition-property
+Hace referencia a la propiedad sobre la cual estoy haciendo la transicion
+
+transition-duration(obligatorio)
+Hace referencia al tiempo que va a tomar la transicion
+
+Cuanto mas tiempo ponga mas lenta va a ser la transition
+
+vp 0s
+   0ms
+
+   1000ms = 1s
+
+transition-delay
+Cuanto tarda la transition en empezar, podemos no ponerlo
+vp (0s o 0ms)
+
+
+
+
+transition-timing-function
+ease 
+linear
+ease-out
+ease-in
+
+Shorthand:
+
+
+transition: property duration delay timing;
+
+
+animation---> se dispara ni bien carga la pagina (onload)
+
+@keyframes movimiento {
+	
+
+from {}
+
+to {}
+
+}
+
+
+elemento { animation: nombre duration;}
+
+
+
+animation-delay
+animation-timing-function
+animation-itiration-count
+        vp (1)
+            n --> cantidad de animaciones
+            infinite (loop)
+
+animation-direction
+Cobra sentido si trabajamos con mas de un loop
+          alternate
+          reverse
+          alternate-reverse
+
+
+animation-fill-mode
+ backwards (vp, vuelve al elemento sin animation)
+ forwards (se queda en el ultimo estadio de la animation)
+
+
+ animation-play-state
+running (vp)
+paused ---> act con js
+
+
+
+ 
+
+Link de otros sliders:
+
+http://docs.dev7studios.com/article/12-getting-started-with-the-nivo-slider-jquery-plugin
+
+
+
+
+

@@ -1,0 +1,104 @@
+<!doctype html>
+
+
+<html><head><title>Introduccion a pseudo clases</title>
+
+<link href="css/estilos.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(ini);
+
+//cuando el documento se carga
+//llama a la funcion ini
+//para asegurarme que cuando el codigo
+// se ejecuta yo ya tengo el dom cargado
+
+function ini(){
+
+$('#pregunta').click(desplegar)
+
+
+}
+
+
+function desplegar(){
+//$('#respuesta').slideDown();
+//$('#respuesta').slideUp();
+$('#respuesta').slideToggle().css('color','red');
+
+
+}
+
+</script>
+
+
+</head><body>
+	<h1> Introduccion a pseudo Clases </h1>
+<a href="#" class="vinculo"> Texto de anclaje </a>
+<a href="#"> Texto de anclaje </a>
+<p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error in consectetur vitae ex recusandae numquam, illum quos, cumque, tempore reprehenderit ducimus doloribus quasi possimus temporibus. Rem vero cupiditate qui, incidunt! </p>
+
+<p> Este elemento tiene rotate 2D </p>
+<img src="imagenes/photo.png" id="dosd">
+
+<p> Este elemento tiene rotate 3D & X </p>
+<img src="imagenes/photo.png" class="tresd">
+
+<p> Este elemento tiene rotate 3D & X e Y </p>
+<img src="imagenes/photo.png" class="tresd tresdb">
+
+<p> Este elemento tienen rotate 3D x, z e y </p>
+<img src="imagenes/photo.png" class="tresd tresdc">
+<p id="pregunta"> Haceme click </p>
+
+<p id="respuesta"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ex quos iste libero corrupti sunt nihil excepturi in modi, tempore, amet eos quaerat officia vitae doloremque maxime dolore odio totam?</p>
+
+
+
+
+<p class="text-danger "> 
+
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur alias corporis esse accusantium quos consequuntur dolorem animi iste culpa fugit labore, incidunt consequatur deleniti nam velit eaque voluptas quam rerum. </p>
+
+
+	<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere totam cumque reprehenderit corrupti dolorum nobis ratione, distinctio aliquam ut labore fugit quasi, ipsam optio esse ex. Nisi fugit id veniam! </p>
+
+<form>
+<div class="form-group">
+
+<label> Nombre: <input class="form-control" type="text"> </label>
+
+</div>
+
+
+
+
+<button class="success"> Haceme click</button>
+
+</form>
+
+	<div class="triangulo"> </div>
+
+
+<p> Ejemplo de tabs con bootstrap </p>
+
+<ul class="nav nav-tabs">
+	<li class="active"> <a href="#"> Descripcion </a> </li>
+	<li> <a href="#"> Imagenes del Producto </a> </li>
+	<li> <a href="#"> Reviews del Producto </a> </li>
+
+</ul>
+
+<p> Ejemplo de transition </p>
+<input type="text" id="caja">
+
+<img id="imagen" src="imagenes/imagen.png">
+<br> 
+<br>
+
+
+
+
+</body></html>

@@ -1,0 +1,62 @@
+@import url("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+body {font: 12px Arial; color: #fff; background: #333;}
+
+a {text-decoration: none;} /*quitar el subrayado*/
+
+a:link {color: orange;}
+a:visited{color: pink;}
+a:hover{color: green;}
+a:active{color: purple;}
+
+.vinculo:hover{color: yellow;}
+
+
+#pregunta { background: white; color: #333; border: 1px dashed white; padding: 10px; text-align: center; line-height: 30px; height: 30px; width: 200px;}
+
+#pregunta:hover {background: #999; color: white; border-color: white; cursor: pointer; border-radius: 10px;}
+
+
+#dosd {transform: rotate(25deg);}
+#dosd:hover {transform: rotate(-25deg);}
+
+.tresd { transform: rotateX(80deg);}
+.tresd:hover { transform: rotateX(0deg);}
+
+.tresdb:hover { transform: rotateY(30deg);}
+
+.tresdc:hover { transform: rotateX(0deg) rotateY(40deg) rotateZ(20deg);}
+
+/*estas clases por estar despues , sobreescriben el valor anterior*/
+
+
+
+#pregunta:active {background: #f00; border-color: pink; color: lightGreen;}
+
+
+#respuesta {display: none;}
+
+
+.triangulo {  border-top: 24px solid transparent; border-left: 24px solid blue; border-bottom: 24px solid transparent;}
+
+.triangulo:hover {border-left-color:red ; }
+
+/*
+#caja {color: black; width: 100px; transition-property:width; transition-duration: 3s; }
+*/
+
+#caja {color: black; width: 100px; transition:width  3s; }
+
+
+
+input:focus , a:focus {outline: none;}
+
+#caja:focus { width: 400px ;}
+/*aca decimos como va a terminar */
+
+
+#imagen {transition: transform 5s 2s linear;}
+#imagen:hover {transform: rotate(25deg);}
+
+
+
+

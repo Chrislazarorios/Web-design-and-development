@@ -1,0 +1,20 @@
+/*
+
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+*/
+/*
+body {margin:0;   }*/
+ /*ley de herencia*/
+* {} /*universal*/
+html{}
+
+p { margin-top: 10px;}
+
+div { width: 200px; height: 200px; background: red; overflow: hidden; position: relative;}
+
+div img { left: 20px; position: absolute; width: 400px; height: 200px;}
+
+
+section { width: 400px; height: 400px; background:url(../imagenes/star.png) ,url(../imagenes/star-2.png)    ; background-repeat: no-repeat, repeat-x; }
+/*
+section { width: 200px; height: 200px; background-image:  url(../imagenes/html.jpg) url(../imagenes/star.png) ; background-repeat: no-repeat; border-radius: 10px / 50px;}*/

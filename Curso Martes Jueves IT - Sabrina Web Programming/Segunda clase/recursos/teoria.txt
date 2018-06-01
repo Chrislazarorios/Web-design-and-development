@@ -1,0 +1,189 @@
+http://colorcop.net/
+(aplicacion de escritorio)
+http://www.colorzilla.com/
+(aplicacion de navegador)
+Solo funciona para paginas online
+Solo como aplicacion en firefox y chrome
+
+
+http://www.w3schools.com/bootstrap/bootstrap_images.asp
+http://www.w3schools.com/bootstrap
+http://getbootstrap.com/
+
+
+<main> </main>
+
+*Contenedor de la parte central de la pagina
+*No tiene que contener partes repetitivas
+
+#F1F1F1
+
+Tablas
+
+<table>
+<caption> Titulo </caption>
+	<tr>
+
+		<td> A</td> <!--table data-->
+
+
+	</tr> <!--table row-->
+	  
+                    </table>
+
+
+
+
+overflow
+
+Hace referencia a que sucede con el contenido cuando excede los limites del contenedor
+
+
+
+visible(vp)
+hidden(esconde el contenido excedente)
+scroll ( genera las barras de scroll sean necesarias o no )
+auto ( genera las barras de scroll solo si son necesarias)
+
+Coordenadas
+top 
+left
+right
+bottom
+
+
+Position
+Hace referencia  a posicionar un elemento.
+
+static(vp /no funciona con coordenadas)
+
+absolute
+
+Se ubican en referencia al padre, slvo que el padre sea estatico
+
+relative
+Es un elemento que funciona con coordenadas
+Se mueve en referencia a si mismo
+Actua de referente de un absoluto
+
+
+fixed 
+
+
+z-index 
+
+Manipular la ubicacion de cada una de las capas 
+
+
+background-image
+
+linear-gradient(blue, lightBlue)
+
+radial-gradient(red, pink)
+
+
+
+Estilos propietarios
+
+-webkit-
+-o-
+-moz-
+-ms-
+
+
+rgba(0,0,0,0.5)
+
+
+1)background-image 
+url(ruta de la imagen)
+none(vp)
+
+2)background-color
+transparent(vp)
+
+3)background-repeat
+Como se comporta la imagen de fondo
+repeat(vp)
+no-repeat
+repeat-x
+repeat-y
+
+4)Background-position
+background-position: left top;
+background-position: 0 0 ;
+background-position: x y;
+
+background-position: 10px bottom;
+
+Palabras
+x
+left center right
+
+y
+
+top center bottom
+
+
+Tips: Si omitimos el valor de y siempre queda en center
+
+
+5) background-size
+Cambiar el tamaño de la imagen de fondo.
+x y 
+x >>> constrain proportions
+
+a) medidas ( px, %, cm, mm, in)
+
+b) cover
+Hace que la imagen cubra el elemento que la tiene de fondo, no importando la imagen en sí.
+
+d) contain
+   Hace que la imagen entre por completo dentro del elemento que la contiene incluso dejando partes sin cubrir de ese elemento
+
+Para poder destinar un estilo para determinado medio
+
+
+<style>
+
+header { width: 100%; height: 200px; background: red;}
+
+
+@media print {
+	
+header { position: fixed; width:9cm; height: 5cm;}
+
+
+
+}
+
+
+
+</style>
+
+Media queries --> vp (all)
+
+
+@media screen and (min-width: 769px) {
+    /* STYLES HERE */
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+    /* STYLES HERE */
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* STYLES HERE */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
