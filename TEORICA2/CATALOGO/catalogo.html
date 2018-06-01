@@ -1,0 +1,176 @@
+<script src="JAVASCRIPT\jquery-1.9.1.min.js"></script>
+
+<link href="../../../CSS/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../CSS/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- TITLE -->
+	<title>CURSO PHP</title>
+
+	<!-- META -->
+	<!-- <meta http-equiv="refresh" content="20" /> -->
+	<meta charset="utf-8" />
+
+	<!-- STYLE -->
+			
+<style type="text/css">
+	
+
+	body {
+		font-family: Helvetica;
+	}
+
+	.fila	
+	{
+		display:flex;
+		flex-direction: row; 
+		align-items: center;
+    	justify-content: center;	
+
+
+	}
+
+	.column	
+	{
+		display:flex;
+		flex-direction: column; 
+		/*align-items: center;
+    	justify-content: center;*/
+
+    	width: 15%;
+	}
+
+	.columnEspacio
+	{
+		width: 3%;	
+	}
+
+	.rowEspacio
+	{
+		height:3%;
+	}
+
+	.table
+	{
+		width: 75%;
+		background-color: #FFFFFF;
+	}
+
+	.descripcionProducto
+	{
+		font-size: 120%;
+		color: #00A9FF;
+		display : 'none';
+	}
+	
+	.precio
+	{
+		font-size: 150%;
+		color: #FF0000;
+	}
+
+	img
+	{
+		width: 99%;
+	}
+
+	body
+	{
+		 background-color: #000000;
+	}
+
+	.jumbotron
+	{
+		 background-color: #66FF66;
+		 color: #000000;
+	}
+
+	.btn-primary 
+	{
+  		color: #00A9FF;
+  		background-color: #303030;
+
+  		background-image: linear-gradient(to bottom,#303030 0,#303030 100%);
+	}
+
+</style>		
+	
+
+</head>
+<body>
+
+
+	
+	<section class = "rowEspacio">
+
+	<section class = "fila">
+		<p><a class="btn btn-primary btn-lg" onclick="goToHome()" role="button">Pagina Principal</a></p>
+	</section>
+
+	<section class = "rowEspacio"></section>	
+
+	<section class = "fila">
+
+		<section class = "column">						
+			<a href="#" class="thumbnail">
+				<img src="t1.png" alt="...">
+			</a>		  	
+			<div class = "descripcionProducto" >Samsung S4</div>
+			<div class = "precio">$5600</div>
+			<input type="button" onclick="comprar(1000)" value="COMPRAR"></input>
+		</section>
+
+		<section class = "column">						
+			<a href="#" class="thumbnail">
+				<img src="t1.png" alt="...">
+			</a>		  	
+			<div class = "descripcionProducto" id="dp1">LG G2 </div>
+			<div class = "precio" id="pr1">$4500</div>
+			<input type="button" onclick="comprar(1001)" value="COMPRAR"></input>
+		</section>
+
+		<section class = "column">						
+			<a href="#" class="thumbnail">
+				<img src="t1.png" alt="...">
+			</a>		  	
+			<div class = "descripcionProducto">Moto G  </div>
+			<div class = "precio">$3500</div>
+			<input type="button" onclick="comprar(1002)" value="COMPRAR"></input>
+		</section>
+
+		<section class = "column">						
+			<a href="#" class="thumbnail">
+				<img src="t1.png" alt="...">
+			</a>		  	
+			<div class = "descripcionProducto">Iphone 4s  </div>
+			<div class = "precio">$7500</div>
+			<input type="button" onclick="comprar(1003)" value="COMPRAR"></input>
+		</section>
+
+	</section>  
+
+	<section class = "rowEspacio"> </section> 	
+
+	<section class = "fila">
+		<p><a class="btn btn-primary btn-lg" onclick="cargarProductosAnteriores()" role="button">Anterior</a></p>
+		<section class = "columnEspacio"></section>
+		<p><a class="btn btn-primary btn-lg" onclick="cargarProductosSiguientes()" role="button">Siguiente</a></p>
+	</section>
+
+	<section class = "rowEspacio"></section>	
+	
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+	function comprar(codigo)
+	{
+		alert(codigo);
+	}
+
+</script>

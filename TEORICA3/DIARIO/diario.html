@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- TITLE -->
+	<title>CURSO PHP & MySQL</title>
+	<!-- META -->
+	<!-- <meta http-equiv="refresh" content="20" /> -->
+	
+	<script src="../../JAVASCRIPT\jquery-1.9.1.min.js"></script>
+
+
+	<link href="../../CSS/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../CSS/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+	<meta charset="utf-8" />
+
+	<style type="text/css">
+	
+	
+
+	.fila	
+	{
+		display:flex;
+		flex-direction: row; 
+		align-items: center;
+    	justify-content: center;
+	}
+
+	.columna
+	{
+		display:flex;
+		flex-direction: column; 
+		align-items: left;
+    	justify-content: left;
+    	width: 20%;
+	}	
+
+	.espacioRow
+	{
+		height: 20px;
+	}
+
+
+	.columnaMenu
+	{
+		display:flex;
+		flex-direction: column; 
+		align-items: center;
+    	justify-content: center;
+    	width: 20%;
+    	color: black;
+		font-size: 200%;
+		text-align: center;				
+	}
+
+	article
+	{
+		border: 20px;
+		border-color: black;
+	}
+
+	img
+	{
+		width: 15%;
+
+	}	
+
+	.titulo
+	{
+		color: blue;
+		text-align: center;
+		font-size: 200%;
+	}
+
+	.nombre
+	{
+		color: black;
+		font-size: 200%;
+		text-align: left;
+		align-items: left;
+		background-color: #E60A0A;
+	}
+
+	.descripcion
+	{
+		font-size: 150%;
+	}
+	
+	h1
+	{
+		font-size: 350%;
+		color: black;
+	}
+
+	.recuadro
+	{
+		border-style: solid;
+    	border-width: 2px;
+    	width: 80%;
+    	background-color: #A2A2A2;
+	}
+
+
+	</style>
+
+</head>
+<body>
+
+	<section class="fila">			
+
+		<h1>Noticias.com</h1>
+
+    </section>
+	
+
+	<section class="fila">
+		<section class="column recuadro">			
+			
+			<article class="fila nombre">
+				<h2>Sube el Dolar</h2>
+			</article>	
+
+			<article class="fila">		
+				<img class="imagen" src="t1.png">  
+				<p class="descripcion">El dólar alcanza récords en todas las franjas del mercado: el libre, a $16,13</p>  			
+			</article>
+
+	    </section>
+    </section>
+
+	<section class="fila">
+		<div class="espacioRow"></div>
+	</section>	
+
+    <section class="fila">
+		<section class="column recuadro">			
+			
+			<article class="fila nombre">
+				<h2>Para el Indec en Chaco hay pleno empleo y pobreza cero</h2>
+			</article>	
+
+			<article class="fila">		
+				<img class="imagen" src="t1.png">  
+				<p class="descripcion">Según el INDEC, la tasa de desempleo en los últimos dos años se habría situado entre 6% y 7%. Incluso, para el organismo oficial de estadísticas, no habría desocupados en Chaco. Algo que los muy creyentes lo calificarían de milagro socioeconómico.
+
+				Los últimos datos de la situación laboral difundidos en agosto, ubican a la provincia norteña en una situación de pleno empleo, porque el 29,7% de la proporción de la población que participó del mercado de trabajo equiparó al total de puestos de trabajo disponibles.</p>  			
+			</article>
+
+	    </section>
+    </section>
+
+    <section class="fila">
+		<div class="espacioRow"></div>
+	</section>
+
+    <section class="fila">
+		<section class="column recuadro">			
+			
+			<article class="fila nombre">
+				<h2>Media hora diaria de caminata es lo mejor para un cerebro sano</h2>
+			</article>	
+
+			<article class="fila">		
+				<img class="imagen" src="t1.png">  
+				<p class="descripcion">Vivir más no es sinónimo de mejor o de buen envejecimiento. Uno de los temas que más preocupa, a medida que avanza la edad, es el de la pérdida de memoria, que ha sido reconocido como un acompañamiento de la vejez. Dificultades para recordar el nombre de alguien conocido recientemente o el contenido de una lista de víveres son experiencias por las que pueden pasar todas las personas, a medida que se convierten en mayores. Sin embargo, existe una diferencia entre la dificultad y la imposibilidad para recordar.</p>  			
+			</article>
+
+	    </section>
+    </section>
+
+
+</body>
+</html>
+
+<?php
+
+
+function DB_getNoticias()
+{
+	$notas = array( 
+
+	array('1','Noticia 1','Descripcion Noticia 1','t1.png','1'),
+	array('2','Noticia 2','Descripcion Noticia 2','t1.png','1'),
+	array('3','Noticia 3','Descripcion Noticia 3','t1.png','2'),
+	array('4','Noticia 4','Descripcion Noticia 4','t1.png','2'),
+	array('5','Noticia 5','Descripcion Noticia 5','t1.png','3'),
+	array('6','Noticia 6','Descripcion Noticia 6','t1.png','3'),
+	array('7','Noticia 7','Descripcion Noticia 7','t1.png','3')
+
+	);
+
+	return $notas;
+}
+
+
+function DB_getSecciones()
+{
+	$secciones = array( 
+
+	array('1','POLITICA'),
+	array('2','ECONOMIA'),
+	array('3','POLICIALES'),
+	array('4','ESPECTACULO')
+
+	);
+
+	return $secciones;
+}
+
+
+?>
+
+
+
+
+
+
+
+
+
+
