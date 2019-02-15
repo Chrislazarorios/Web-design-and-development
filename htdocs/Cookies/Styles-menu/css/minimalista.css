@@ -1,0 +1,8 @@
+body{
+	background-image: url("../img/minimalist.jpg");
+	/*background-color: blue;*/
+}
+
+h1, h2, p, div{
+	color: white;
+}

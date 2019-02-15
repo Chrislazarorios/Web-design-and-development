@@ -1,0 +1,28 @@
+body{
+	background-color: yellow;
+}
+
+.two{
+	width: 100%;
+}
+
+.left{
+	float: left;
+	width: 50%;
+	background-color: orange;
+    height: 400px;
+    font-size: 3rem;
+}
+
+.right{
+	float: right;
+	background-color: lightblue;
+    height: 400px;
+    width: 50%;
+    font-size: 3rem;
+}
+.third {
+	padding: 1rem;
+	border: thick solid #444;
+	font-size: 3rem;
+}

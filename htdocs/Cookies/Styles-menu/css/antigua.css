@@ -1,0 +1,7 @@
+body{
+	background-image: url("../img/ancient.jpg");
+	/*background-color: brown;*/
+}
+h1, h2, p, div{
+	color: white;
+}
