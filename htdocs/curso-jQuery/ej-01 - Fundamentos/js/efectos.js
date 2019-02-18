@@ -31,7 +31,7 @@
 	// }
 
 
-// Activamos el mismo evento semantico utilizando sintaxis jQuery
+// Activamos el mismo evento utilizando sintaxis jQuery y de manera multiple
 	// jQuery(window).on('load', function()
 	// {
 	// 	alert('Se ha cargado el documento semanticamente desde window con jQuery')//funciona
@@ -45,6 +45,7 @@
 	// }
 
 // Document con jQuery
+// Forma semantica
 // En window se usa load, en document se usa ready
 	// $(document).ready(function ()
 	// {
@@ -320,16 +321,132 @@ function efectos()
 	// Agregamos un efecto fancy utilizando callbacks
 	$('#boton21').on('click', function(){
 		$('#ajax').load('otro.html', function(){
-			$('this')
+			$(this)
 				.css({display : 'none'})
 				.fadeIn(2000)
 		})
 	})
+
+	$('#que-tecla').on('keyup', function(evento){
+		// El metodo '.text' es como el metodo .html o .innerHtml, reemplaza el contenido del selector, pero reemplaza todo de manera literal, no acepta HTML
+		// Es decir, no interpreta las etiquetas html como <i> o <p>, los escribe tal cual
+		// Aqui, el resultado será, el keyCode de la tecla presionada en el input de id 'codigo-tecla', con las etiquetas <i> escritas de forma literal, no cambiará el texto a itálica porque el metodo '.text' no puede interpretar etiquetas HTML
+		$('#codigo-tecla').text('<i> keyCode : '+evento.keyCode+'</i>')
+	})
+
+	$('#subir').on('click', function(){
+		$('html, body').animate({
+			scrollTop : 0,
+			scrollLeft : 0
+		}, 1000)
+	})
 }
 
+// El unico parametro que le puedo pasar a una funcion que se ejecuta dentro de un evento en JS es el propio evento(e)
+function muevete(evento)
+{
+	// Cada tecla presionada se muestra por consola (keyboardEvent), esto sirve para saber que tecla fue activada a traves del codigo clave(keyCode) , cada tecla tiene un keyCode(por ej, la barra espaciadora es 32, la tecla j es 74)
+	// console.log(evento)
+	// alert(evento.keyCode)
+
+	switch(evento.keyCode)
+	{
+		case 37:
+			// Algunas teclas activan ciertos atajos por defecto, como ctr +t crea una pestaña nueva, o alt+D que selecciona toda la URL de mi navegador, las flechas que usamos para mover el pacman mueven el scroll de la ventana
+			// De modo que al mover el pacman tambien movemos la ubicacion de la ventana
+			// Para evitar esto, utilizamos el evento preventDefault() en cada case
+			evento.preventDefault()
+			$('#pacman').animate({left : '-=2rem'}, 'swing')
+		break
+		
+		case 38:
+			evento.preventDefault()
+			$('#pacman').animate({top : '-=2rem'}, 'swing')
+		break
+		
+		case 39:
+			evento.preventDefault()
+			// No usamos right para movernos a la derecha porque ya usamos left para movernos a la izquierda
+			// Una vez elegimos un lado (left o right) seguimos utilizandolo, tanto para movernos a izquierda como derecha
+			// Si elegimos left, para movernos a la izquierda usamos negativo (ej: -2rem) y para la derecha positivo (ej: +2rem)
+			//('#pacman').animate({right : '+=2rem'}, 'swing')
+			$('#pacman').animate({left : '+=2rem'}, 'swing')
+		break
+
+		case 40:
+			evento.preventDefault()
+			$('#pacman').animate({top : '+=2rem'}, 'swing')
+		break
+
+	}
+}
+
+// DetectarScroll se encarga de mostrar/ocultar el boton para volver a la parte superior de la pagina una vez bajamos el scroll hasta cierto numero de pixeles
+function detectarScroll()
+{
+	var scrollVertical = $(window).scrollTop(), 
+		scrollHorizontal =$(window).scrollLeft()
+
+	// Mostramos por consola la ubicacion del scroll vertical y horizontal en pixeles
+	//console.log(scrollVertical, scrollHorizontal)
+
+	// Utilizamos operador ternario como opcion al if else para mostrar el boton o no
+	// return(condition) ? true : false
+	return(scrollVertical > 450) ? $('#subir').fadeIn() : $('#subir').fadeOut()
+}
+
+function responsiveDesign()
+{
+	// innerWidth-innerHeight-outerWidth-outerHeight son metodos jQuery que ademas del ancho del elemento(un div, un article, etc), tienen (o no) en cuenta cosas como el margen, padding y borde a la hora de medir el ancho o alto de un elemento
+	var anchoPantalla = $(window).innerWidth(),
+		altoPantalla = $(window).innerHeight()
+
+	//No se muestra hasta redimensionar la pantalla
+	console.log(anchoPantalla, altoPantalla)
+
+	// Ancho para dispositivos moviles
+	if(anchoPantalla <= 480)
+	{
+		$('.item').removeClass('dos-columnas tres-columnas cuatro-columnas')
+	}
+	// Ancho para dispositivos moviles en horizontal y tablets en vertical
+	else if(anchoPantalla <= 768)
+	{
+		$('.item')
+			.addClass('dos-columnas')
+			.removeClass('tres-columnas cuatro-columnas')
+	}
+	// Ancho para tabletas en horizontal y algunas computadoras de escritorio
+	else if(anchoPantalla <= 1024)
+	{
+		$('.item')
+			.addClass('tres-columnas')
+			.removeClass('dos-columnas cuatro-columnas')
+	}
+	// Cualquier cosa mas ancha ya es computadora de escritorio
+	else
+	{
+		$('.item')
+			.addClass('cuatro-columnas')
+			.removeClass('dos-columnas tres-columnas')
+	}
+}
 
 //document de manera semantica si funciona
-$(document).ready(efectos)
+$(document)
+	// .on('ready', efectos)
+	.ready(efectos)
+	// el evento Keydown se activa al presionar una tecla
+	.on('keydown', muevete)
+	// .keydown(muevete)
 
-// usar jquery con document para hacer evento multiple no funciona 
-//$(document).on('ready', efectos)
+// Trabajamos con dos eventos importantes del elemento window, scroll y redimensionamiento
+$(window)
+	.on('scroll', detectarScroll)
+	// No se activa hasta redimensionar la pantalla, a menos que agregemos el evento load
+	// Podemos activar los eventos por separado, o ambos a la vez
+	// .on({
+	// 		resize : responsiveDesign,
+	// 		load : responsiveDesign
+	// })
+	.on('resize load', responsiveDesign)
