@@ -29,10 +29,14 @@ hr {
 
 #pacman {
   	position: relative;
+  	/*ancho y altura en cero hacen que solo el borde sea visible*/
   	width: 0;
   	height: 0;
+  	/*hacemos grueso el borde para que, al no tener contenido, se forme un cuadrado grueso*/
 	border: 60px solid yellow;
+	/*border-right forma la boca*/
   	border-right: 60px solid transparent;
+  	/*border-radius forma el cuerpo circular*/
   	border-radius: 60px;
 }
 

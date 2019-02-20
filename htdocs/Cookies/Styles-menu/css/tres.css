@@ -1,0 +1,17 @@
+body{
+	background-color: green;
+}
+
+.three{
+	display: flex;
+	width: 100%;
+}
+
+.left, .right, .third {
+	width: 33%;
+	height: auto;
+	padding: 1rem;
+	border: thick solid #444;
+	font-size: 3rem;
+}
+
