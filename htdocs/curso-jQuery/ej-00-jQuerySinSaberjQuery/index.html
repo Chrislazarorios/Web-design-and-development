@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery sin saber jQuery</title>
+	<!-- Agrego hoja de estilos y carpeta fonts para iconos -->
+	<link rel="stylesheet" type="text/css" href="css/flexslider.css">
+</head>
+<body>
+	<h1>jQuery sin saber jQuery</h1>
+	<h2>FlexSlider 2</h2>
+	<!-- http://flexslider.woothemes.com -->
+	
+	<div class="flexslider">
+	  <ul class="slides">
+	    <li>
+	      <img src="img/slide1.jpg" />
+	    </li>
+	    <li>
+	      <img src="img/slide2.jpg" />
+	    </li>
+	    <li>
+	      <img src="img/slide3.jpg" />
+	    </li>
+	    <li>
+	      <img src="img/slide4.jpg" />
+	    </li>
+	  </ul>
+	</div>
+
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+	<!-- FlexSlider -->
+  	<script defer src="js/jQuery/jquery.flexslider.js"></script>
+
+	<script type="text/javascript">
+		//Can also be used with $(document).ready()
+		$(window).load(function() {
+		  $('.flexslider').flexslider({
+		    animation: "slide"
+		  });
+		});
+	</script>
+</body>
+</html>
+<!-- -->
