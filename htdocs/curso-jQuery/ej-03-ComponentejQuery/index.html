@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Componentes jQuery</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.plugin.css">
+</head>
+<body>
+	<header>
+		<h1>
+			Componentes en
+			<br>
+			<img id="logo" height="100" src="img/jquery-logo.png"/>
+		</h1>
+	</header>
+	<section id="contenido">
+		<p>
+			Los plugins son una utilidad que pone jQuery a disposición de los programadores para ampliar las funcionalidades de la librería. Sirven para hacer cosas más complejas y para resolver necesidades específicas, de tal manera que puedan utilizarse en cualquier proyecto.
+		</p>
+		<p>
+			En la práctica, un plugin no es más que una función que se añade al objeto jQuery, para que a partir de ese momento responda a nuevas funcionalidades.
+		</p>
+		<button id="defecto">Activar plugin por defecto</button>
+		<button id="usuario">Activar plugin por usuario</button>
+	</section>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.plugin.js"></script>
+	<script type="text/javascript">
+		// El metodo multiple no funciona con document.on('ready')
+		// $(document).on('ready', function(){
+		// 	$('button').plugin()
+		// })
+		$(document).ready(function(){
+			// El metodo '.plugin' se refiere al nombre que le pusimos a nuestro componente(jquery.PLUGIN.js)
+			// $('button').plugin()
+
+			// Asignamos los estilos por default del plugin al section de id 'contenido' mediante el click al boton de id 'defecto'
+			$('#defecto').on('click', function(){
+				$('#contenido').plugin()
+			})
+
+			// Asignamos los estilos seleccionados por el usuario al section de id 'contenido' mediante el click al boton de id 'usuario'
+			// Sin embargo, ademas de aplicar los estilos por default del plugin, aplicamos estilos extras utilizando notacion JSON como parametro del metodo plugin
+			// Estos estilos extras (que en la practica, son seleccionados por el usuario, aqui los escribimos a mano) pisan los estilos anteriores
+			$('#usuario').on('click', function(){
+				$('#contenido').plugin({
+					fondo : 'greenYellow',
+					colorLetra : 'red',
+					letra : '3rem'
+				})
+			})
+		})
+	</script>
+</body>
+</html>
