@@ -1,0 +1,20 @@
+body{ overflow-x: hidden; }
+
+.fixed-nav {
+	position : fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+
+.wrapper{
+	width: 100vw;
+	background: skyblue;
+}
+
+.section{
+	/* El padding-top es para tener en cuenta el tamaño del header que tiene como position:fixed, 
+	   si no alteramos el padding-top, el header tapa el viewheight(vh)*/
+	padding-top: 10rem;
+	height: 100vh;
+}
