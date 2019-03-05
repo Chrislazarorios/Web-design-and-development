@@ -9,7 +9,7 @@
 <body>
 	<header class="fixed-nav">
 		<h1>
-			<a href="#inicio" class="one-page" data-borde="#4082AE"><img src="img/jquery.png" /></a>
+			<a href="#inicio" class="one-page logo" data-borde="#4082AE"><img src="img/jquery.png" /></a>
 		</h1>
 		<nav>
 			<ul>
@@ -88,7 +88,10 @@
 	<script type="text/javascript" src="js/jquery.onepage-scrolling.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.one-page').onePageScrolling()
+			$('.one-page').onePageScrolling({
+				// Mi plugin puede usar slow, swing, fast, etc porque heredó las caracteristicas de jQuery
+				velocidad : 'slow'
+			})
 		})
 	</script>
 </body>
