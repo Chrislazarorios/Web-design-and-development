@@ -1,19 +1,6 @@
-// jquery.onePageScrolling.js v1.1.0
+// jquery.onePageScrolling.js v1.0.0
 
-
-/*
- Para versionar
- https://semver.org esta pagina enseña normas o estilos a seguir para nombrar las distintas versiones de un proyecto
-*/
-
-/*
- Para minificar
-	https://kangax.github.io/html-minifier/ - minifica HTML
-	https://cssminifier.com - minifica CSS
-	https://jscompress.com - minifica JS
-
-
-*/
+// https://semver.org esta pagina enseña normas o estilos a seguir para nombrar las distintas versiones de un proyecto
 
 // Creamos una funcion anonima autoejecutable
 (function($){
@@ -23,8 +10,7 @@
 		onePageScrolling : function(opcionesUsuario) {
 			// 1º paso opciones default
 			var opcionesIniciales = {
-				velocidad : 1000,
-				direccion : 'vertical' // otras opciones : horizontal
+				velocidad : 1000
 			},
 				// 2º paso fusion de opciones default y usuario
 				opc = $.extend(opcionesIniciales, opcionesUsuario)
@@ -48,33 +34,17 @@
 					// Por lo tanto, el metodo '.attr' es capaz de devolver un valor, o de asignarlo, dependiendo de la cantidad de parametros (1 o 2)
 					var idEnlace = $(this).attr('href'),
 						// en la variable coordSeccion guardamos el resultado del metodo '.offset' que nos devuelve las coordenadas del atributo que le pasamos en idEnlace
-						coordSeccion
-
-
-					if(opc.direccion == 'vertical')
-					{
 						coordSeccion = $(idEnlace).offset().top
 
-						$('html, body').animate({
-							scrollTop : coordSeccion
-						}, opc.velocidad)
-					}
-					else if(opc.direccion == 'horizontal')
-					{
-						coordSeccion = $(idEnlace).offset().left
-
-						$('html, body').animate({
-							scrollLeft : coordSeccion
-						}, opc.velocidad)
-					}
-
 					// Comprobamos el id que obtenemos a partir del metodo .attr
-					console.log(idEnlace , coordSeccion, opc.direccion)	
+					//console.log(idEnlace , coordSeccion)	
+
+					$('html, body').animate({
+						scrollTop : coordSeccion
+					}, opc.velocidad)
 
 				}
 
-
-				// Cambia el color del borde inferior de la cabecera dependiendo la seccion en la que nos encontramos
 				function colorBordeCabeceraActual()
 				{
 					// Del objeto que active el plugin obtener (con .attr) el valor de su atributo 'data-borde'
@@ -86,15 +56,13 @@
 
 				}
 
-
-				// Resalta el nombre de la seccion en la que nos encontramos
 				function seccionActual()
 				{
 					$('.one-page').removeClass('actual')
 					
 					// console.log( $(this).attr('class') )
 
-					// Es un boolean, devuelve TRUE solo si tiene la clase buscada (logo)
+					// Es un boolean, devuelve true solo si tiene la clase buscada
 					console.log( $(this).hasClass('logo') )
 
 					// if( $(this).attr('class') != 'logo' )
@@ -105,29 +73,11 @@
 					}
 				}
 
-				function scrollHorizontal()
-				{
-					if(opc.direccion == 'horizontal')
-					{
-						var numSecciones = $('.wrapper').children().length,
-							anchoWrapper = (numSecciones * 100).toString() + 'vw'
-
-						console.log(numSecciones , anchoWrapper)
-
-						$('.wrapper').css({width : anchoWrapper})
-
-						$('body')
-							.removeClass('hidden')
-							.css({ overflowX : 'hidden' })
-					}
-				}
-
 				// Se ejecutan tres funciones dentro de la funcion constructora, por lo tanto retorna tres eventos que se activan on click
 				$(this)
-					.on('click', scrollHorizontal)
+					.on('click', aDondeScroll)
 					.on('click', colorBordeCabeceraActual)
 					.on('click', seccionActual)
-					.on('click', aDondeScroll)
 			}
 
 			// 4º paso retorno el plugin (onePageScrolling) junto al metodo '.each' con la funcion constructora como parametro
