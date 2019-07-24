@@ -1,0 +1,55 @@
+/*
+* Elimino todos los margenes y paddings 
+*/
+
+*{
+	margin : 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*
+* body
+* awesome background-color using linear-gradient
+*/
+
+body{
+	height: 100vh;
+	display: flex; /* flexbox */
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+	font-family: sans-serif; /* font type */
+	color: white; /* letter color */
+}
+
+.location,
+.temperature{
+	height: 30vh;
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.temperature{
+	flex-direction: column;
+}
+
+.degree-section{
+	display: flex;
+	align-items: center;
+	cursor: pointer; /* cursor se vuelve pointer sobre esta clase */
+}
+
+/* span dentro de la clase degree-section */
+.degree-section span{ 
+	margin: 10px;
+	font-size: 30px;
+ }
+
+.degree-section h2{
+	font-size: 40px;
+}
+
